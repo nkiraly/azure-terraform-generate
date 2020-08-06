@@ -1,11 +1,11 @@
 import json
 
 
-def build(resource_type, resource_name, resource):
+def build(resource_type, resource_name, resource_id, resource):
     lines = []
 
-    lines.append("resource %s %s {" %
-        (value(resource_type), value(resource_name))
+    lines.append("resource %s %s { # aztfimport %s" %
+        (value(resource_type), value(resource_name), resource_id)
     )
     lines.extend(object_props(resource))
     lines.append("}")
